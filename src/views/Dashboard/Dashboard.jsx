@@ -6,10 +6,8 @@ import ChartistGraph from "react-chartist"
 import withStyles from "@material-ui/core/styles/withStyles"
 import Icon from "@material-ui/core/Icon"
 // @material-ui/icons
-import Views from "@material-ui/icons/ViewComfy"
 import Add from "@material-ui/icons/Add"
 import DateRange from "@material-ui/icons/DateRange"
-import LocalOffer from "@material-ui/icons/LocalOffer"
 import Update from "@material-ui/icons/Update"
 import ArrowUpward from "@material-ui/icons/ArrowUpward"
 import AccessTime from "@material-ui/icons/AccessTime"
@@ -56,15 +54,15 @@ class Dashboard extends React.Component {
     return (
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={6} md={3}>
+          <GridItem xs={12} sm={4} md={4}>
             <Card>
               <CardHeader color="warning" stats icon>
                 <CardIcon color="warning">
                   <Icon>burst_mode</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Used Space</p>
+                <p className={classes.cardCategory}>Artworks</p>
                 <h3 className={classes.cardTitle}>
-                  49/50 <small>GB</small>
+                  3/45
                 </h3>
               </CardHeader>
               <CardFooter stats>
@@ -72,18 +70,21 @@ class Dashboard extends React.Component {
                   <Info>
                     <Add />
                   </Info>
-                  <a href="#pablo" onClick={e => e.preventDefault()}>
+                  <a href="#add" onClick={e => e.preventDefault()}>
                     Add new artwork
+                  </a>
+                  <a href="#manage" onClick={e => e.preventDefault()} className="right">
+                    Manage artworks
                   </a>
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={6} md={3}>
+          <GridItem xs={12} sm={4} md={4}>
             <Card>
-              <CardHeader color="success" stats icon>
-                <CardIcon color="success">
-                  <Views />
+              <CardHeader color="info" stats icon>
+                <CardIcon color="info">
+                  <Accessibility />
                 </CardIcon>
                 <p className={classes.cardCategory}>Impressions</p>
                 <h3 className={classes.cardTitle}>34,245</h3>
@@ -96,7 +97,7 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
-          <GridItem xs={12} sm={6} md={3}>
+          <GridItem xs={12} sm={4} md={4}>
             <Card>
               <CardHeader color="danger" stats icon>
                 <CardIcon color="danger">
@@ -107,16 +108,17 @@ class Dashboard extends React.Component {
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <LocalOffer />
+                  <DateRange />
                   Last 24 Hours
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
+{/*
           <GridItem xs={12} sm={6} md={3}>
             <Card>
-              <CardHeader color="info" stats icon>
-                <CardIcon color="info">
+              <CardHeader color="success" stats icon>
+                <CardIcon color="success">
                   <Accessibility />
                 </CardIcon>
                 <p className={classes.cardCategory}>Followers</p>
@@ -130,6 +132,7 @@ class Dashboard extends React.Component {
               </CardFooter>
             </Card>
           </GridItem>
+*/}
         </GridContainer>
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
@@ -161,18 +164,17 @@ class Dashboard extends React.Component {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
-              <CardHeader color="warning">
+              <CardHeader color="danger">
                 <ChartistGraph
                   className="ct-chart"
-                  data={emailsSubscriptionChart.data}
-                  type="Bar"
-                  options={emailsSubscriptionChart.options}
-                  responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                  listener={emailsSubscriptionChart.animation}
+                  data={completedTasksChart.data}
+                  type="Line"
+                  options={completedTasksChart.options}
+                  listener={completedTasksChart.animation}
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Email Subscriptions</h4>
+                <h4 className={classes.cardTitle}>Completed Tasks</h4>
                 <p className={classes.cardCategory}>
                   Last Campaign Performance
                 </p>
@@ -186,17 +188,18 @@ class Dashboard extends React.Component {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
-              <CardHeader color="danger">
+              <CardHeader color="warning">
                 <ChartistGraph
                   className="ct-chart"
-                  data={completedTasksChart.data}
-                  type="Line"
-                  options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
+                  data={emailsSubscriptionChart.data}
+                  type="Bar"
+                  options={emailsSubscriptionChart.options}
+                  responsiveOptions={emailsSubscriptionChart.responsiveOptions}
+                  listener={emailsSubscriptionChart.animation}
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Completed Tasks</h4>
+                <h4 className={classes.cardTitle}>Email Subscriptions</h4>
                 <p className={classes.cardCategory}>
                   Last Campaign Performance
                 </p>

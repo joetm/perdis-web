@@ -47,19 +47,7 @@ function UserProfile(props) {
             </CardHeader>
             <CardBody>
               <GridContainer>
-                <GridItem xs={12} sm={12} md={5}>
-                  <CustomInput
-                    labelText="Company (disabled)"
-                    id="company-disabled"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                    inputProps={{
-                      disabled: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={3}>
+                <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
                     labelText="Username"
                     id="username"
@@ -68,7 +56,7 @@ function UserProfile(props) {
                     }}
                   />
                 </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
+                <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
                     labelText="Email address"
                     id="email-address"
@@ -78,6 +66,7 @@ function UserProfile(props) {
                   />
                 </GridItem>
               </GridContainer>
+
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                   <CustomInput
@@ -97,21 +86,10 @@ function UserProfile(props) {
                     }}
                   />
                 </GridItem>
-              </GridContainer>
-              <GridContainer>
                 <GridItem xs={12} sm={12} md={4}>
                   <CustomInput
                     labelText="City"
                     id="city"
-                    formControlProps={{
-                      fullWidth: true
-                    }}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={4}>
-                  <CustomInput
-                    labelText="Country"
-                    id="country"
                     formControlProps={{
                       fullWidth: true
                     }}
@@ -126,7 +104,19 @@ function UserProfile(props) {
                     }}
                   />
                 </GridItem>
+                <GridItem xs={12} sm={12} md={4}>
+                  <CustomInput
+                    labelText="Country"
+                    id="country"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                  />
+                </GridItem>
               </GridContainer>
+
+            <p>&nbsp;</p>
+
               <GridContainer>
                 <GridItem xs={12} sm={12} md={12}>
                   <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
@@ -143,13 +133,16 @@ function UserProfile(props) {
                   />
                 </GridItem>
               </GridContainer>
+
             </CardBody>
             <CardFooter>
               <Button color="primary">Update Profile</Button>
             </CardFooter>
           </Card>
         </GridItem>
+
         <GridItem xs={12} sm={12} md={4}>
+        PREVIEW
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -171,6 +164,7 @@ function UserProfile(props) {
           </Card>
         </GridItem>
       </GridContainer>
+
     </div>
   );
 }
